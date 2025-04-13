@@ -1,151 +1,113 @@
-# Candidate Portfolio Dashboard
+# GitHub Profile Viewer for Recruiters
 
 ## Overview
 
-The Candidate Portfolio Dashboard is an internal HR tool designed to help recruiters organize, view, and filter developer candidate profiles all in one place. This lightweight application allows you to:
-
-- Store candidate information including GitHub/LinkedIn profiles
-- Track tech stacks and experience levels
-- Quickly filter and sort candidates
-- Export candidate data to CSV
+A React application that allows recruiters to quickly view GitHub profiles and repositories without leaving their workflow. The app provides key candidate information and repository details with sorting/filtering capabilities.
 
 ## Features
 
-### Candidate Management
+- 🔍 Search GitHub users by username
+- 👤 View profile information (avatar, bio, location, followers)
+- 📦 Browse repositories with sorting and filtering
+- ⏳ Search history (last 5 searches)
+- 🌓 Light/Dark mode toggle
+- 📱 Fully responsive design
 
-- **Add new candidates** with:
-  - Full name
-  - Job role/position
-  - LinkedIn and GitHub URLs
-  - Experience level (Junior/Mid/Senior)
-  - Tech stack (multiple tags)
+## How to Use
 
-### Dashboard View
+### 1. Searching for a Profile
 
-- **Card-based layout** for easy scanning
-- **Quick links** to LinkedIn and GitHub profiles
-- **Visual badges** for experience levels
-- **Tech stack chips** for at-a-glance skills assessment
+1. Enter a GitHub username in the search bar
+2. Press Enter or click the Search button
+3. View the user's profile information in the left panel
+4. See their repositories in the right panel
 
-### Powerful Filtering
+### 2. Using Repository Filters
 
-- Filter by:
-  - Job role
-  - Experience level
-  - Tech stack tags
-- Sort by:
-  - Name (A-Z)
-  - Experience level (Junior → Senior)
+- **Sort by**:
+  - Stars (default)
+  - Forks
+  - Name
+- **Filter by language**:
+  - Select from available languages in dropdown
+  - "All" shows all repositories
 
-### Other Features
+### 3. Accessing Search History
 
-- **Click any candidate** to view full details in a modal
-- **Pagination** for large candidate lists
-- **Export to CSV** functionality for easy data sharing
+- Recent searches appear below the search bar
+- Click any username to search again
+- History persists between sessions
 
-## Getting Started
+### 4. Toggling Dark Mode
+
+- Click the theme toggle button in the top right corner
+- The app will remember your preference
+
+## Installation (For Developers)
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Installation
+### Steps
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/BongominErickJuma/Candidate-Portfolio-Dashboard
-   cd candidate-portfolio-dashboard
-   ```
+```bash
+git clone https://github.com/BongominErickJuma/GitHub-Profile-Viewer
+cd GitHub-Profile-Viewer
+```
 
 2. Install dependencies:
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+```bash
+npm install
+# or
+yarn install
+```
 
-3. Start the development server:
+3. Run the development server:
 
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser to:
 
-## Usage Guide
+```
+http://localhost:3000
+```
 
-### Adding Candidates
+## Deployment
 
-1. Fill out the form on the left side of the dashboard
-2. Provide all required information
-3. For tech stack:
-   - Select from predefined options or
-   - Type custom technologies and click "Add"
-4. Click "Add Candidate" to submit
+The app can be deployed to any static hosting service:
 
-### Viewing Candidates
+- [Vercel](https://vercel.com)
+- [Netlify](https://netlify.com)
+- [GitHub Pages](https://pages.github.com)
 
-- All candidates appear in the main dashboard area
-- Click any candidate card to view full details in a modal
-- Use the LinkedIn and GitHub icons to visit profiles
+## API Usage
 
-### Filtering and Sorting
+This app uses the public GitHub API:
 
-1. Use the "Filters & Sorting" panel at the top of the dashboard
-2. Select sorting preference (Name or Experience)
-3. Enter filters as needed:
-   - Type in the role field to filter by job title
-   - Select experience level from dropdown
-   - Choose specific tech stack to filter by
-
-### Exporting Data
-
-1. Apply any desired filters
-2. Click the "Export to CSV" button
-3. A CSV file will download with all currently filtered candidates
-
-## Data Persistence
-
-All candidate data is stored in your browser's local storage. This means:
-
-- Data persists between sessions
-- Data is specific to your browser/device
-- To share data, use the CSV export feature
+- Rate limit: 60 requests per hour (unauthenticated)
+- Endpoints used:
+  - `https://api.github.com/users/{username}`
+  - `https://api.github.com/users/{username}/repos`
 
 ## Troubleshooting
 
-### Data Not Saving
-
-- Ensure you're using the same browser where you added candidates
-- Check if browser settings block local storage
-- Try clearing cache and reloading the application
-
-### Export Issues
-
-- Make sure you have candidates in the current filtered view
-- Check browser settings for download permissions
-- Try a different browser if issues persist
-
-## Built With
-
-- [React](https://reactjs.org/) - JavaScript library
-- [Vite](https://vitejs.dev/) - Build tool
-- [Tailwind CSS](https://tailwindcss.com/) - Styling framework
-- [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - Data persistence
-
-## Future Enhancements
-
-- User authentication
-- Cloud storage integration
-- Bulk import functionality
-- Advanced analytics
-- Team collaboration features
+- **User not found**: Double check the username spelling
+- **No repositories shown**: The user may not have public repositories
+- **Rate limit exceeded**: Wait an hour or provide a GitHub token in the future
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
